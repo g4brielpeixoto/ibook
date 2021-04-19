@@ -11,11 +11,11 @@ export default Vue.extend({
   props: {
     text: {
       type: String,
-      require: true
+      required: true
     },
     strong: {
       type: String,
-      require: true
+      required: true
     }
   }
 })
