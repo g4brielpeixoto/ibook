@@ -11,7 +11,7 @@ export default class Books extends VuexModule {
   private books = [] as Book[]
   private book = {} as Book
 
-  public get $allBooks() {
+  public get $all() {
     return this.books
   }
 
@@ -32,7 +32,6 @@ export default class Books extends VuexModule {
   @Action
   public async index() {
     const books = await $axios.$get('/books')
-    console.log(books)
     this.context.commit('SET_ALL', books)
   }
 
