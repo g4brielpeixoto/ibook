@@ -2,13 +2,22 @@
   <div class="dashboard">
     <img src="@/assets/img/dashboard.svg" />
     <PageTitle text="Você está no" strong="Dashboard" />
-    <button>Logout</button>
+    <button @click="logout">Logout</button>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-export default Vue.extend({})
+import { auth } from '@/store'
+
+export default Vue.extend({
+  methods: {
+    logout() {
+      auth.logout()
+      this.$router.push('/login')
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -27,6 +36,7 @@ export default Vue.extend({})
     background-color: color('dark', 'darkest');
     cursor: pointer;
     transition: 0.25s;
+    border-radius: 25px;
     &:hover {
       background-color: black;
     }

@@ -113,7 +113,7 @@ export default Vue.extend({
       color: color('light');
       align-items: center;
       &:focus {
-        border: 2px solid color('light');
+        border: 3px solid color('light');
       }
       .password-input {
         color: color('light');

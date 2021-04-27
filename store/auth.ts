@@ -15,6 +15,11 @@ export default class Auth extends VuexModule {
     this.token = token
   }
 
+  @Mutation
+  private DELETE_TOKEN() {
+    this.token = ''
+  }
+
   @Action
   async login(form: LoginForm) {
     const accessToken = await $axios.$post('/login', form)
@@ -25,6 +30,15 @@ export default class Auth extends VuexModule {
     })
 
     this.context.commit('SET_TOKEN', accessToken)
+  }
+
+  @Action logout() {
+    $cookies.remove('token')
+    this.context.commit('DELETE_TOKEN')
+  }
+
+  @Action update() {
+    this.context.commit('SET_TOKEN', $cookies.get('token'))
   }
 
   public get $token() {
