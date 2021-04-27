@@ -33,7 +33,11 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
+    ['cookie-universal-nuxt', { alias: 'cookiz' }]
+  ],
 
   styleResources: {
     scss: ['@/components/bosons/*.scss']

@@ -38,7 +38,7 @@ export default Vue.extend({
     align-items: center;
     transition: all 300ms ease;
     &:hover {
-      opacity: 0.89;
+      background: black;
     }
   }
 }

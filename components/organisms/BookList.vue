@@ -7,10 +7,27 @@
 <script lang="ts">
 import Vue from 'vue'
 import { books } from '@/store'
+import { Book } from '@/models'
 
 export default Vue.extend({
+  props: {
+    category: {
+      type: String,
+      default: ''
+    }
+  },
   computed: {
     $books() {
+      // Filtro se passar uma prop de categoria mostrará somente livros da categoria escolhida
+      if (this.category !== '') {
+        const booksInCategory = [] as Book[]
+        books.$all.forEach((book) => {
+          book.categories.forEach((category) => {
+            if (category.name === this.category) booksInCategory.push(book)
+          })
+        })
+        return booksInCategory
+      }
       return books.$all
     }
   }

@@ -1,10 +1,16 @@
+/* eslint-disable import/no-mutable-exports */
 import { NuxtAxiosInstance } from '@nuxtjs/axios'
+import { NuxtCookies } from 'cookie-universal-nuxt'
 
-// eslint-disable-next-line import/no-mutable-exports
 let $axios: NuxtAxiosInstance
+let $cookies: NuxtCookies
 
 export function initializeAxios(axiosInstance: NuxtAxiosInstance) {
   $axios = axiosInstance
 }
 
-export { $axios }
+export function initializeCookies(cookiesInstance: NuxtCookies) {
+  $cookies = cookiesInstance
+}
+
+export { $axios, $cookies }

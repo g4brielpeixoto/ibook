@@ -1,9 +1,9 @@
-interface Category {
+export interface Category {
   id: number
   name: string
 }
 
-interface Page {
+export interface Page {
   id: number
   text: string
   pageNumber: number

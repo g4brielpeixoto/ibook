@@ -1,0 +1,3 @@
+<template>
+  <DashboardTemplate />
+</template>
