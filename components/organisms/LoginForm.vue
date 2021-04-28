@@ -112,7 +112,7 @@ export default Vue.extend({
       border-radius: 25px;
       color: color('light');
       align-items: center;
-      &:focus {
+      &:focus-within {
         border: 3px solid color('light');
       }
       .password-input {
@@ -125,14 +125,15 @@ export default Vue.extend({
         img {
           width: 18px;
         }
+        &:focus-within {
+          border: 2px solid color('light');
+        }
       }
     }
     .password {
       padding: 0.5959em 1.3em;
-      &:focus {
-        border: 2px solid color('light');
-      }
     }
+
     .button {
       display: grid;
       justify-items: center;
